@@ -1,0 +1,8 @@
+# Allow hal_camera to read and write to motor_device
+allow hal_camera motor_device:dir search;
+allow hal_camera motor_device:chr_file rw_file_perms;
+
+# Allow hal_camera to read to sysfs_kgsl
+r_dir_file(hal_camera, sysfs_kgsl)
+
+set_prop(hal_camera, vendor_camera_prop)
